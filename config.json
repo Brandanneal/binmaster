@@ -1,0 +1,72 @@
+{
+  "bot": {
+    "email": "",
+    "password": "",
+    "auth": "mojang",
+    "auto_reconnect": true,
+    "proxy": {
+      "ip": "",
+      "port": "",
+      "username": "binmaster",
+      "password": "gaming"
+    },
+    "bed_flips": {
+      "spam_buy_delay": 15,
+      "pre_bed_spam": 2350
+    },
+    "safechat_lenience": 5000,
+    "next_update_diff": 25000,
+    "sell_min_sleep": 100,
+    "skyblock_join_delay": 5000,
+    "autobuy_cookie_min_duration_seconds": 259200,
+    "cookie_max_price": 4000000,
+    "rpc": true,
+    "autosell": true,
+    "relistCoop": true,
+    "listDuration": "6h"
+  },
+  "api": {
+    "key": "",
+    "hypixel_key": ""
+  },
+  "page": {
+    "port": 6969
+  },
+  "webhook": {
+    "webhook_url": "",
+    "big_flip_trigger": 1000000,
+    "big_flip_user_id": ""
+  },
+  "flips": {
+    "checked_categories": [
+      "armor",
+      "weapon",
+      "misc",
+      "accessories",
+      "blocks",
+      "consumables"
+    ],
+    "bypass": {
+      "pp": 80,
+      "p": 4000000,
+      "spd": 5
+    },
+    "checkPets": true,
+    "maxPetFlips": 5,
+    "excludeCrafts": true,
+    "maxPortionOfPurse": 0.2,
+    "undercutAmount": 100,
+    "conservativeTrigger": 12,
+    "conservativeMinProfit": 350000,
+    "conservativeMinPP": 5,
+    "ultraConservativeTrigger": 18,
+    "ultraConservativeMinProfit": 2000000,
+    "ultraConservativeMinPP": 10,
+    "minProfit": 125000,
+    "minProfitPercent": 5,
+    "maxManipulationAmount": 0.3
+  },
+  "debugging": {
+    "enabled": true
+  }
+}

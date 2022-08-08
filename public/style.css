@@ -1,0 +1,407 @@
+@font-face {
+    font-family: minecraft;
+    src: url(mc.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+body {
+    background-color: black;
+    background-position: center center;
+    background-image: url("https://i.imgur.com/agb8J1M.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+span {
+    font-family: minecraft;
+}
+
+#mc-input {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0;
+    height: 4em;
+    width: 85%;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: black;
+    margin: 1%;
+    padding: 0.5%;
+    color: white;
+    transition: all ease-in-out 200ms;
+}
+
+#console-input {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0;
+    height: 4em;
+    width: 85%;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: black;
+    margin: 1%;
+    padding: 0.5%;
+    color: white;
+    transition: all ease-in-out 200ms;
+}
+
+.input:focus {
+    border: 2px solid black;
+    background-color: #0f0f0f;
+    outline: none;
+}
+
+.send {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0;
+    width: 12%;
+    height: 4em;
+    margin: 1%;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all ease-in-out 200ms;
+}
+
+.send:hover {
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+}
+
+#messages {
+    position: absolute;
+    bottom: 7.5em;
+    left: 1%;
+    height: calc(100% - 10em);
+    width: 98%;
+    border-radius: 10px;
+    list-style-type: none;
+    max-width: calc(98%);
+    min-width: 15em;
+    overflow-y: auto;
+    font-family: minecraft;
+}
+
+#console-messages{
+    position: absolute;
+    bottom: 7.5em;
+    left: 1%;
+    height: calc(100% - 10em);
+    width: 98%;
+    border-radius: 10px;
+    list-style-type: none;
+    min-width: 15em;
+    overflow-y: auto;
+    font-family: minecraft;
+}
+
+
+#console-viewer {
+    position: absolute;
+    bottom: 0em;
+    left: 0%;
+    height: calc(100%);
+    width: 100%;
+    border-radius: 10px;
+    list-style-type: none;
+    max-width: 100%;
+    min-width: 15em;
+    overflow-y: auto;
+    font-family: minecraft;
+    margin: 0%;
+}
+
+#info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 50%; */
+    width: 100%;
+    overflow-y: auto;
+}
+
+#info .info-box {
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 1em;
+    transition: all ease-in-out 200ms;
+}
+
+#info .info-box:hover {
+    background-color: #afafaf;
+    color: black;
+}
+
+#info .info-box h2 {
+    text-align: center;
+    padding: 5%;
+}
+
+#info .info-box img {
+    width: 5em;
+    margin-top: 1em;
+    /* transform: translateX(50%); */
+}
+
+#bot-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tabs {
+    display: inline;
+    height: 1em;
+    white-space: nowrap;
+    position: absolute;
+    bottom: calc(60% + 3.32em);
+    margin-left: 2em;
+}
+
+.tab {
+    color: white;
+    display: inline-block;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: .3em;
+    background-color: #444;
+    border-bottom: 2px solid white;
+}
+
+.tab:not(.selected-tab):hover {
+    cursor: pointer;
+}
+
+.selected-tab {
+    border-bottom: 3px solid black;
+    background-color: black;
+}
+
+.tabcontent {
+    animation: fadeTab ease-in-out .5s;
+}
+
+#tab-wrapper {
+    position: absolute;
+    bottom: calc(0% + 2em);
+    height: 60%;
+    width: calc(100% - 4em);
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border: 2px solid white;
+}
+
+#auction-viewer {
+    list-style-type: none;
+    display: inline;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.auctionItem {
+    font-size: 10px;
+    display: inline-block;
+    height: fit-content;
+    max-height: calc(100% - 6em);
+    width: 18vw;
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
+    list-style-type: none;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 5em;
+    width: fit-content;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1em;
+    vertical-align: top;
+    text-align: center;
+    pointer-events: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */}
+
+.auctionItem:hover {
+    background-color: #222;
+    transition: all ease-in-out 200ms;
+}
+
+.align-left {
+    float: left;
+}
+
+.align-right {
+    float: right;
+}
+
+.msg {
+    color: white;
+    padding: 1rem;
+    background-color: #0f0f0f;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    word-wrap: break-word;
+    margin: 1rem;
+    animation: fade 500ms;
+    transition: all ease-in-out 200ms;
+    font-family: minecraft;
+}
+
+.msg:hover {
+    background-color: rgba(175, 175, 175, 0.72);
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.console-msg {
+    color: white;
+    padding: 1rem;
+    background-color: #0f0f0f;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    word-wrap: break-word;
+    margin: 1rem;
+    animation: fade 500ms;
+    transition: all ease-in-out 200ms;
+    font-family: minecraft;
+    margin-top: 0px;
+}
+
+.console-msg:hover {
+    background-color: rgba(175, 175, 175, 0.72);
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.mcText {
+    font-family: minecraft;
+}
+
+.auctionPic {
+    text-align: center;
+}
+
+#inv {
+    width: 20%;
+    height: 70%;
+}
+
+.item {
+    float: left;
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    animation: fade 500ms;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0f0f0f;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+        background-color: #afafaf;
+    }
+    to {
+        opacity: 1;
+        background-color: #0f0f0f;
+    }
+}
+
+@keyframes fadeTab {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+/*mobile support that got deleted at some point*/
+
+@media (max-width: 450px) {
+    #send {
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    #input {
+        width: calc(100% - 4px - 1%);
+    }
+
+    #time-box {
+        float: right;
+    }
+
+    #bot-info-div {
+        min-width: calc(100vw - 4em);
+    }
+
+    #time {
+        text-align: center;
+        font-size: 8px;
+    }
+
+    #stats {
+        font-size: 8px;
+    }
+
+    #bot-info {
+        font-size: 8px;
+    }
+
+    .statistics {
+        max-width: calc(50% - 5em);
+        min-width: calc(50% - 5em);
+    }
+
+    #input {
+        padding: 1em;
+    }
+
+}
