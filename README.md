@@ -1,6 +1,8 @@
 # binmaster
 binmaster-bot
 
+I can't upload the entire assembly of files to the repository, download the release https://github.com/Jenazzz/binmaster/releases
+
 This is the latest version of the binmaster-bot crack, namely 1.8.6.
 
 Crack updates will not go out on it, it took a lot of time to reverse and bypass the server part of the sockets. If a global update is released, only then, by order, I will update the crack for $ 15
